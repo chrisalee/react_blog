@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&family=Stylish&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CUSTOM PROPERTIES */
+:root {
+  --ff-body: 'RocknRoll One', sans-serif;
+  --ff-secondary: 'Stylish', sans-serif;
+
+  --clr-light: #e2e2e2;
+  --clr-dark: #303030;
+  --clr-accent: #e8b94d;
+  --clr-accent2: #4d9de8;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+        0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+}
+
+/* CUSTOM SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+  width: 1.025em;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: var(--bs);
+  border-radius: 1em;
+}
+/* Track color */
+::-webkit-scrollbar-track-piece{
+  background: var(--clr-light);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--clr-dark);
+  border-radius: 1em;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--clr-accent);
+}
+
+/* GENERAL STYLES */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--ff-body);
+}
