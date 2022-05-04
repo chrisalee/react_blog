@@ -11,9 +11,8 @@ const Sidebar = () => {
         />
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
-          quisquam beatae quam sit? Ipsa voluptas incidunt vero perferendis,
-          ullam repellendus recusandae nulla, odio, et velit blanditiis
-          explicabo praesentium. Laborum, blanditiis?
+          quisquam beatae quam sit. Ipsa voluptas incidunt vero perferendis,
+          ullam repellendus recusandae nulla, blanditiis?
         </p>
       </div>
       <div className="sidebar__item">

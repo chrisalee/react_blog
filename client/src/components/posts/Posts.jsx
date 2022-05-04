@@ -1,9 +1,12 @@
 import './posts.css';
+import Post from '../../components/post/Post';
 
 const Posts = () => {
   return (
     <div className='posts'>
-        all posts
+        <Post />
+        <Post />
+        <Post />
     </div>
   )
 }
