@@ -2,7 +2,9 @@ import './write.css';
 
 const Write = () => {
   return (
-    <div className='write'>Write</div>
+    <div className='write'>
+      write
+    </div>
   )
 }
 

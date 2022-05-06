@@ -1,12 +1,14 @@
-import React from 'react'
-import Navbar from './components/navbar/Navbar'
-import Home from './pages/home/Home'
+import React from 'react';
+import Navbar from './components/navbar/Navbar';
+// import Single from './pages/single/Single';
+// import Home from './pages/home/Home';
+import Write from './pages/write/Write';
 
 const App = () => {
   return (
     <div className='app'>
       <Navbar />
-      <Home />
+      <Write />
     </div>
   )
 }
