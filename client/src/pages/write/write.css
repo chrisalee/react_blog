@@ -1,3 +1,75 @@
 .write {
-    font-size: large;
+    padding-top: 50px;
 }
+
+.write__img {
+    margin-left: 150px;
+    width: 70vw;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.write__form {
+    position: relative;
+}
+
+.write__formGroup {
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.write__icon {
+    width: 25px;
+    height: 25px;
+    font-size: 20px;
+    border: 1px solid var(--clr-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 2px;
+    color: var(--clr-accent2);
+}
+
+.write__input {
+    font-size: 30px;
+    border: none;
+    padding: 20px;
+    width: 70vw;
+    font-family: var(--ff-secondary);
+}
+
+.write__input::placeholder {
+    color: var(--clr-dark);
+    font-family: var(--ff-secondary);
+}
+
+.write__input:focus {
+    outline-style: none;
+}
+
+.write__textarea {
+    width: 70vw;
+    height: 100vh;
+    font-family: inherit;
+    font-size: 20px;
+}
+
+.write__submit {
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    color: var(--clr-light);
+    background-color: var(--clr-accent2);
+    padding: 10px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+
