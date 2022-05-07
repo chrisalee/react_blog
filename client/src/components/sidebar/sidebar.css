@@ -8,6 +8,7 @@
     background-color: var(--clr-light);
     border-radius: 10px;
     align-items: center;
+    box-shadow: var(--bs);
 }
 
 .sidebar__item {

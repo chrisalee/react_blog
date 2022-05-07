@@ -1,0 +1,107 @@
+.settings {
+    display: flex;
+}
+
+.settings__container {
+    flex: 9;
+    padding: 20px;
+}
+
+.settings__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.settings__titleUpdate {
+    font-size: 30px;
+    margin-bottom: 20px;
+    color: var(--clr-accent2);
+}
+
+.settings__titleDelete {
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--clr-accent);
+}
+
+.settings__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.settings__profilePic {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.settings__profilePic > img {
+    height: 70px;
+    width: 70px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: var(--bs);
+}
+
+.settings__icon {
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 50%;
+    margin-left: 10px;
+    color: var(--clr-light);
+    background-color: var(--clr-accent2);
+    cursor: pointer;
+}
+
+.settings__form > label {
+    font-size: 20px;
+    margin-top: 20px;
+    font-family: var(--ff-secondary);
+}
+
+/* .settings__profilePicInput {
+    width: 30%;
+} */
+
+.settings__form > input {
+    color: var(--clr-dark);
+    font-family: inherit;
+    margin: 10px 0;
+    height: 30px;
+    border: none;
+    border-bottom: 1px solid var(--clr-dark);
+}
+
+.settings__form > input:focus {
+    outline-style: none;
+    font-family: inherit;
+}
+
+.settings__submitButton {
+    align-self: center;
+    width: 150px;
+    border: none;
+    border-radius: 10px;
+    color: var(--clr-light);
+    background-color: var(--clr-accent2);
+    padding: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 16px;
+    box-shadow: var(--bs);
+}
+
+.settings__submitButton:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-dark);
+}
