@@ -1,0 +1,65 @@
+.login {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/03/Konohagakure.jpg");
+  background-size: cover;
+}
+
+.login__title {
+  font-size: 50px;
+  font-family: var(--ff-secondary);
+}
+
+.login__form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login__form > label {
+  margin: 10px 0;
+}
+
+.login__input {
+  padding: 10px;
+  background-color: var(--clr-light);
+  border: 1px solid var(--clr-dark);
+  border-radius: 10px;
+  font-family: inherit;
+}
+
+.login__input:focus {
+  outline: none;
+}
+
+.login__button {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: var(--clr-accent2);
+  color: var(--clr-light);
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  font-family: inherit;
+}
+
+.login__registerButton {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: var(--clr-accent2);
+    color: var(--clr-light);
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: inherit;
+}
