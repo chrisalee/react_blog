@@ -1,10 +1,11 @@
 .post {
-    width: 385px;
+    width: 380px;
     height: fit-content;
-    margin: 0px 25px 40px 25px;
+    margin: 0px 25px 40px;
     display: flex;
     flex-direction: column;
     padding: 20px;
+    box-shadow: var(--bs);
 }
 
 /* .post:hover {
@@ -17,6 +18,7 @@
     height: 280px;
     object-fit: cover;
     border-radius: 7px;
+    
 }
 
 .post__info {

@@ -8,7 +8,7 @@
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url("https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/03/Konohagakure.jpg");
+    url("https://th.bing.com/th/id/R.413f1e229a2ea805f4a0266d74ceea12?rik=JoMW%2flBE%2fb5aIA&riu=http%3a%2f%2fcf.collectorsweekly.com%2fstories%2ffeL-g0iUKjtFan6k6F5oVg-small.jpg&ehk=gqFDvLwtDWPF60ziHH3kM2ozml8pEiGKZ5rmfpV9CgM%3d&risl=&pid=ImgRaw&r=0");
   background-size: cover;
 }
 
@@ -33,6 +33,7 @@
   border: 1px solid var(--clr-dark);
   border-radius: 10px;
   font-family: inherit;
+  box-shadow: var(--bs);
 }
 
 .register__input:focus {
@@ -49,7 +50,12 @@
   border-radius: 10px;
   text-align: center;
   font-family: inherit;
+  box-shadow: var(--bs);
+}
 
+.register__button:hover {
+  color: var(--clr-dark);
+  background-color: var(--clr-accent);
 }
 
 .register__loginButton {
@@ -63,4 +69,5 @@
   color: var(--clr-light);
   border-radius: 10px;
   font-family: inherit;
+  box-shadow: var(--bs);
 }

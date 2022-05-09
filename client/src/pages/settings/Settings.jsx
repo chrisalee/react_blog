@@ -3,7 +3,7 @@ import Sidebar from '../../components/sidebar/Sidebar';
 
 const Settings = () => {
   return (
-    <div className="settings">
+    <div className="settings"> 
       <div className="settings__container">
         <div className="settings__title">
           <span className="settings__titleUpdate">Update Account</span>

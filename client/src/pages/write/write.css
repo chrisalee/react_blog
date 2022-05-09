@@ -73,3 +73,8 @@
     border-radius: 3px;
 }
 
+.write__submit:hover {
+    color: var(--clr-dark);
+    background-color: var(--clr-accent);
+}
+

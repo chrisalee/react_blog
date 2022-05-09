@@ -1,7 +1,9 @@
 import "./navbar.css";
-// import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const user = true;
+
   return (
     <div className="navbar">
       <div className="navbar__left">
@@ -24,23 +26,58 @@ const Navbar = () => {
       </div>
       <div className="navbar__center">
         <ul className="navbar__list">
-          <li className="list__item">HOME</li>
-          <li className="list__item">ABOUT</li>
-          <li className="list__item">CONTACT</li>
-          <li className="list__item">WRITE</li>
+          <li className="list__item">
+            <Link className="navbar__link" to="/">
+              HOME
+            </Link>
+          </li>
+          <li className="list__item">
+            <Link className="navbar__link" to="/">
+              ABOUT
+            </Link>
+          </li>
+          <li className="list__item">
+            <Link className="navbar__link" to="/">
+              CONTACT
+            </Link>
+          </li>
+          <li className="list__item">
+            <Link className="navbar__link" to="/write">
+              WRITE
+            </Link>
+          </li>
+          <li className="list__item">
+            {user && 'LOGOUT'}
+          </li>
         </ul>
       </div>
       <div className="navbar__right">
-        <img
-          className="navbar__img"
-          src="https://images.pexels.com/photos/11189048/pexels-photo-11189048.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-          alt=""
-        />
-        <ul className="navbar__list">
-          <li className="list__item">LOGIN</li>
-          <li className="list__item">REGISTER</li>
-        </ul>
-        <span className="iconify navbar__iconSearch" data-icon="fa-solid:search"></span>
+        {user ? (
+          <Link className="navbar__link" to="/settings">
+            <img
+              className="navbar__img"
+              src="https://images.pexels.com/photos/11189048/pexels-photo-11189048.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+              alt=""
+            />
+          </Link>
+        ) : (
+          <ul className="navbar__list">
+            <li className="list__item">
+              <Link className="navbar__link" to="/login">
+                LOGIN
+              </Link>
+            </li>
+            <li className="list__item">
+              <Link className="navbar__link" to="/register">
+                REGISTER
+              </Link>
+            </li>
+          </ul>
+        )}
+        <span
+          className="iconify navbar__iconSearch"
+          data-icon="fa-solid:search"
+        ></span>
       </div>
     </div>
   );

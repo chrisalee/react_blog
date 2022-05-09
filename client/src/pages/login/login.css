@@ -33,6 +33,7 @@
   border: 1px solid var(--clr-dark);
   border-radius: 10px;
   font-family: inherit;
+  box-shadow: var(--bs);
 }
 
 .login__input:focus {
@@ -49,6 +50,12 @@
   border-radius: 10px;
   text-align: center;
   font-family: inherit;
+  box-shadow: var(--bs);
+}
+
+.login__button:hover {
+  color: var(--clr-dark);
+  background-color: var(--clr-accent);
 }
 
 .login__registerButton {
@@ -62,4 +69,5 @@
     border-radius: 10px;
     cursor: pointer;
     font-family: inherit;
+    box-shadow: var(--bs);
 }
