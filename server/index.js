@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const multer = require('multer');
 const authRoute = require("./routes/auth.routes");
 const userRoute = require("./routes/users.routes");
 const postRoute = require("./routes/posts.routes");
@@ -15,6 +16,20 @@ mongoose
   .connect(process.env.MONGODB_URL, {})
   .then(() => console.log("Connected to the MongoDB"))
   .catch((error) => console.log(error));
+
+const storage = multer.diskStorage({
+  destination: (request, file, cb) => {
+    cb(null, "images");
+  },
+  filename: (request, file, cb) => {
+    cb(null, request.body.name);
+  }
+});
+
+const upload = multer({ storage: storage });
+app.post("/api/upload", upload.single("file"), (request, response) => {
+  response.status(200).json("File uploaded");
+});
 
 app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
