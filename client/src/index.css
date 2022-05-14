@@ -18,6 +18,8 @@
 
   --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
         0.125em 0.125em 0.25em rgba(0, 0, 0, 0.15);
+  --bs2: 0.25em 0.25em 0.75em #4d9de85c,
+        0.125em 0.125em 0.25em #4d9de83c;
 }
 
 /* CUSTOM SCROLLBAR */
