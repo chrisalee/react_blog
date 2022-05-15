@@ -55,6 +55,10 @@
     cursor: pointer;
 }
 
+.sidebar__link {
+    color: inherit;
+}
+
 .sidebar__listItem:hover {
     color: var(--clr-accent2);
 }
