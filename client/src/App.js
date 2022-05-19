@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./pages/ScrollToTop";
 import Navbar from "./components/navbar/Navbar";
+import BackToTop from './components/backToTop/BackToTop';
 import Home from "./pages/home/Home";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/Write";

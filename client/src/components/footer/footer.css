@@ -1,0 +1,8 @@
+.footer {
+    background-color: var(--clr-accent2);
+    height: 300px;
+    color: var(--clr-light);
+    padding: 50px;
+    font-size: 12px;
+    display: flex;
+}

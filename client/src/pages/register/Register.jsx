@@ -7,11 +7,11 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState([]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setError(false);
+    setError([]);
     try {
       const response = await axios.post("/auth/register", {
         username,
@@ -20,7 +20,8 @@ const Register = () => {
       });
       response.data && window.location.replace("/login");
     } catch (error) {
-      setError(true);
+      console.log(error.response.data);
+      // setError(true);
     }
   };
 
@@ -58,7 +59,11 @@ const Register = () => {
           Already a member, Login here
         </button>
       </Link>
-      {error && <span style={{ color: "#ee0f0f", marginTop: "10px" }}>Please fill out all fields.</span>}
+      {error && (
+        <span style={{ color: "#ee0f0f", marginTop: "10px" }}>
+          Please fill out all fields.
+        </span>
+      )}
     </div>
   );
 };

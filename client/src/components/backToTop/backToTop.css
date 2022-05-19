@@ -1,0 +1,26 @@
+.scrollTop {
+    width: 100%;
+    margin-top: 10px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    animation: fadeIn 0.3s;
+    transition: opacity 0.4s;
+    background-color: var(--clr-accent);
+    color: var(--clr-dark);
+    /* opacity: 0.8; */
+    letter-spacing: 10px;
+  }
+
+.scrollTop__icon {
+    font-size: 30px;
+    margin: 0 20px;
+
+}
+  
+  .scrollTop:hover {
+    opacity: 0.8;
+    color: var(--clr-light);
+  }

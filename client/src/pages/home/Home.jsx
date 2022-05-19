@@ -4,6 +4,8 @@ import axios from 'axios';
 import Header from '../../components/header/Header';
 import Sidebar from '../../components/sidebar/Sidebar';
 import Posts from '../../components/posts/Posts';
+import BackToTop from '../../components/backToTop/BackToTop';
+import Footer from "../../components/footer/Footer";
 import './home.css';
 
 const Home = () => {
@@ -26,6 +28,8 @@ const Home = () => {
           <Posts posts={posts}/>
           <Sidebar />
         </div>
+        <BackToTop />
+        <Footer />
     </div>
   )
 }
