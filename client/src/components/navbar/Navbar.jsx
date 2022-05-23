@@ -1,8 +1,15 @@
-import "./navbar.css";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../../context/Context";
+import { LOGOUT } from "../../context/Constants";
+import "./navbar.css";
 
 const Navbar = () => {
-  const user = true;
+  const { user, dispatch } = useContext(Context);
+
+  const handleLogout = () => {
+    dispatch({ type: LOGOUT });
+  };
 
   return (
     <div className="navbar">
@@ -46,17 +53,22 @@ const Navbar = () => {
               WRITE
             </Link>
           </li>
-          <li className="list__item">
-            {user && 'LOGOUT'}
-          </li>
+          <div>
+            <li className="list__item" onClick={handleLogout}>
+              {user && LOGOUT}
+            </li>
+          </div>
         </ul>
       </div>
       <div className="navbar__right">
+        <div>
+
+        
         {user ? (
           <Link className="navbar__link" to="/settings">
             <img
               className="navbar__img"
-              src="https://images.pexels.com/photos/11189048/pexels-photo-11189048.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+              src={user.profilePicture}
               alt=""
             />
           </Link>
@@ -74,6 +86,7 @@ const Navbar = () => {
             </li>
           </ul>
         )}
+        </div>
         <span
           className="iconify navbar__iconSearch"
           data-icon="fa-solid:search"

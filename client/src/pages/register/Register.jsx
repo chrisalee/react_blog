@@ -7,11 +7,11 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState([]);
+  const [error, setError] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setError([]);
+    setError(false);
     try {
       const response = await axios.post("/auth/register", {
         username,
@@ -21,7 +21,7 @@ const Register = () => {
       response.data && window.location.replace("/login");
     } catch (error) {
       console.log(error.response.data);
-      // setError(true);
+      setError(true);
     }
   };
 

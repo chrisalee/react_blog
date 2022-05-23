@@ -1,14 +1,47 @@
+import { useContext, useState } from "react";
+import { Context } from "../../context/Context";
+import axios from "axios";
 import "./write.css";
+import BackToTop from "../../components/backToTop/BackToTop";
+import Footer from "../../components/footer/Footer";
 
 const Write = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [file, setFile] = useState(null);
+  const { user } = useContext(Context);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const newPost = {
+      username: user.username,
+      title,
+      description,
+    };
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("name", filename);
+      data.append("file", file);
+      newPost.photo = filename;
+      try {
+        await axios.post("/upload", data);
+      } catch (error) {}
+    }
+    try {
+      const response = await axios.post("/posts", newPost);
+      window.location.replace("/post/" + response.data._id);
+    } catch (error) {}
+  };
+
   return (
     <div className="write">
-      <img
-        src="https://th.bing.com/th/id/R.c25996cf3ab729a2fa74ff503e3a9eda?rik=YYWiWJLOp2NODA&riu=http%3a%2f%2famericanprofile.com%2fwp-content%2fuploads%2f2012%2f01%2fg-pen-writing-on-paper.jpg&ehk=LQ0KQABFzhYfRhYdZx9SJ679OfjhGvl%2bTHqE%2b7zBiJI%3d&risl=&pid=ImgRaw&r=0"
-        alt=""
-        className="write__img"
-      />
-      <form className="write__form">
+      {/* <div> */}
+        {file && (
+          <img src={URL.createObjectURL(file)} alt='' className="write__img" />
+        )}
+      {/* </div> */}
+      <form className="write__form" onSubmit={handleSubmit}>
         <div className="write__formGroup">
           <label htmlFor="fileInput">
             <span
@@ -16,12 +49,18 @@ const Write = () => {
               data-icon="ant-design:file-add-twotone"
             ></span>
           </label>
-          <input id="fileInput" type="file" style={{ display: "none" }} />
+          <input
+            id="fileInput"
+            type="file"
+            style={{ display: "none" }}
+            onChange={(event) => setFile(event.target.files[0])}
+          />
           <input
             className="write__input"
             type="text"
             placeholder="Title"
             autoFocus={true}
+            onChange={(event) => setTitle(event.target.value)}
           />
         </div>
         <div className="write__formGroup">
@@ -29,13 +68,15 @@ const Write = () => {
             className="write__input write__textarea"
             placeholder="Tell your story..."
             type="text"
-            autoFocus={true}
+            onChange={(event) => setDescription(event.target.value)}
           />
         </div>
         <button className="write__submit" type="submit">
           Publish
         </button>
       </form>
+      <BackToTop />
+      <Footer />
     </div>
   );
 };

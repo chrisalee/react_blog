@@ -24,7 +24,6 @@ const Login = () => {
     }
   }
 
-
   return (
     <div className="login">
       <span className="login__title">Login</span>

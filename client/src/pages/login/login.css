@@ -58,6 +58,12 @@
   background-color: var(--clr-accent);
 }
 
+.login__button:disabled{
+  cursor: not-allowed;
+  background-color: var(--clr-light);
+  color: var(--clr-light);
+}
+
 .login__registerButton {
     position: absolute;
     top: 60px;

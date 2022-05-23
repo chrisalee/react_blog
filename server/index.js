@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
+const path = require("path");
 const mongoose = require("mongoose");
 const multer = require('multer');
 const authRoute = require("./routes/auth.routes");
@@ -11,6 +12,7 @@ const categoryRoute = require("./routes/categories.routes");
 dotenv.config();
 app.use(express.json());
 const port = process.env.PORT || 5000;
+app.use("/images", express.static(path.join(__dirname, "/images")));
 
 mongoose
   .connect(process.env.MONGODB_URL, {})
