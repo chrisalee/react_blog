@@ -1,47 +1,47 @@
 import "./settings.css";
 import Sidebar from '../../components/sidebar/Sidebar';
-import { useContext, useState } from "react";
-import { Context } from "../../context/Context";
-import { UPDATE_START, UPDATE_SUCCESS } from "../../context/Constants";
-import axios from "axios";
+// import { useContext, useState } from "react";
+// import { Context } from "../../context/Context";
+// import { UPDATE_START, UPDATE_SUCCESS } from "../../context/Constants";
+// import axios from "axios";
 
 const Settings = () => {
-  const [file, setFile] = useState(null);
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [success, setSuccess] = useState(false);
+  // const [file, setFile] = useState(null);
+  // const [username, setUsername] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [success, setSuccess] = useState(false);
 
-  const { user, dispatch } = useContext(Context);
-  const publicFolder = 'http://localhost:5000/images/';
+  // const { user, dispatch } = useContext(Context);
+  // const publicFolder = 'http://localhost:5000/images/';
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    dispatch({ type: UPDATE_START });
-    const updatedUser = {
-      userId: user._id,
-      username,
-      email,
-      password
-    };
-    if(file) {
-      const data = new FormData();
-      const filename = Date.now() + file.name;
-      data.append('name', filename);
-      data.append('file', file);
-      updatedUser.profilePicture = filename;
-      try {
-        await axios.post('/upload', data);
-      } catch (error) {}
-    }
-    try {
-      const response = await axios.put('/users/' + user._id, updatedUser);
-      setSuccess(true);
-      dispatch({ type: UPDATE_SUCCESS, payload: response.data });
-    } catch (error) {
+  // const handleSubmit = async (event) => {
+  //   event.preventDefault();
+  //   dispatch({ type: UPDATE_START });
+  //   const updatedUser = {
+  //     userId: user._id,
+  //     username,
+  //     email,
+  //     password
+  //   };
+  //   if(file) {
+  //     const data = new FormData();
+  //     const filename = Date.now() + file.name;
+  //     data.append('name', filename);
+  //     data.append('file', file);
+  //     updatedUser.profilePicture = filename;
+  //     try {
+  //       await axios.post('/upload', data);
+  //     } catch (error) {}
+  //   }
+  //   try {
+  //     const response = await axios.put('/users/' + user._id, updatedUser);
+  //     setSuccess(true);
+  //     dispatch({ type: UPDATE_SUCCESS, payload: response.data });
+  //   } catch (error) {
       
-    }
-  }
+  //   }
+  // }
 
   return (
     <div className="settings"> 

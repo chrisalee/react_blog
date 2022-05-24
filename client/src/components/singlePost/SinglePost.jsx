@@ -28,12 +28,15 @@ const SinglePost = () => {
   }, [path]);
 
   const handleDelete = async () => {
+    console.log("clicked");
     try {
       await axios.delete(`/posts/${post._id}`, {
         data: { username: user.username },
       });
       window.location.replace("/");
-    } catch (error) {}
+    } catch (error) {
+      console.log("error:", error);
+    }
   };
 
   const handleUpdate = async () => {
@@ -47,48 +50,47 @@ const SinglePost = () => {
     } catch (error) {}
   };
 
+  // console.log(post.username === user.username)
+
   return (
     <div className="singlePost">
       <div className="singlePost__container">
-        {/* check to see if need div below for insertBefore in node.js */}
-        <div>
-          {post.photo && (
-            <img
-              className="singlePost__img"
-              src={publicFolder + post.photo}
-              alt={post.photo}
-            />
-          )}
-        </div>
-        <div>
-          {updateMode ? (
-            <input
-              type="text"
-              value={title}
-              className="singlePost__titleInput"
-              autoFocus
-              onChange={(event) => setTitle(event.target.value)}
-            />
-          ) : (
-            <h1 className="singlePost__title">
-              {title}
-              {post.username === user?.username && (
-                <div className="singlePost__edit">
-                  <span
-                    className="iconify singlePost__icon"
-                    data-icon="ci:edit"
-                    onClick={() => setUpdateMode(true)}
-                  ></span>
+        {post.photo && (
+          <img
+            className="singlePost__img"
+            src={publicFolder + post.photo}
+            alt={post.photo}
+          />
+        )}
+        {updateMode ? (
+          <input
+            type="text"
+            value={title}
+            className="singlePost__titleInput"
+            autoFocus
+            onChange={(event) => setTitle(event.target.value)}
+          />
+        ) : (
+          <h1 className="singlePost__title">
+            {title}
+            {post.username === user?.username && (
+              <>
+                <div className="singlePost__edit" onClick={handleDelete}>
                   <span
                     className="iconify singlePost__icon"
                     data-icon="heroicons-outline:trash"
-                    onClick={{ handleDelete }}
                   ></span>
                 </div>
-              )}
-            </h1>
-          )}
-        </div>
+                <div className="singlePost__edit" onClick={() => setUpdateMode(true)}>
+                  <span
+                    className="iconify singlePost__icon"
+                    data-icon="ci:edit"
+                  ></span>
+                </div>
+              </>
+            )}
+          </h1>
+        )}
         <div className="singlePost__info">
           <span>
             Author:
@@ -102,24 +104,22 @@ const SinglePost = () => {
             {new Date(post.createdAt).toDateString()}
           </span>
         </div>
-        <div>
-          {updateMode ? (
-            <textarea
-              className="singlePost__description"
-              value={description}
-              onChange={(event) => setDescription(event.target.value)}
-            />
-          ) : (
-            <p className="singlePost__description">{post.description}</p>
-          )}
-        </div>
-        <div>
-          {updateMode && (
-            <button className="singlePost__button" onClick={handleUpdate}>
-              Update
-            </button>
-          )}
-        </div>
+        {updateMode ? (
+          <textarea
+            className="singlePost__descriptionInput"
+            value={description}
+            onChange={(event) => setDescription(event.target.value)}
+          />
+        ) : (
+          <p className="singlePost__description">{description}</p>
+        )}
+        {updateMode && (
+          <>
+          <button className="singlePost__button" onClick={handleUpdate}>
+            Update
+          </button>
+          </>
+        )}
       </div>
     </div>
   );
