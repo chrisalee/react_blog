@@ -6,6 +6,7 @@ import "./navbar.css";
 
 const Navbar = () => {
   const { user, dispatch } = useContext(Context);
+  const publicFolder = "http://localhost:5000/images/";
 
   const handleLogout = () => {
     dispatch({ type: LOGOUT });
@@ -62,17 +63,15 @@ const Navbar = () => {
       </div>
       <div className="navbar__right">
         <div>
-
-        
         {user ? (
           <Link className="navbar__link" to="/settings">
             <img
               className="navbar__img"
-              src={user.profilePicture}
+              src={publicFolder + user.profilePicture}
               alt=""
             />
           </Link>
-        ) : (
+          ) : (
           <ul className="navbar__list">
             <li className="list__item">
               <Link className="navbar__link" to="/login">

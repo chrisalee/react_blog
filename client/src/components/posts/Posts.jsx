@@ -5,7 +5,7 @@ const Posts = ({ posts }) => {
   return (
     <div className='posts'>
         {
-          posts.map((post) => (
+          posts.slice(0).reverse().map((post) => (
             <Post post={post} key={post._id} />
           ))
         }

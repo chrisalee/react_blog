@@ -81,6 +81,7 @@
     text-transform: uppercase;
 }
 
+/* update  form css */
 .singlePost__titleInput {
     margin: 20px 0;
     font-size: 20px;
@@ -93,7 +94,7 @@
     line-height: 25px;
 }
 
-.singlePost__titleInput:focus {
+.singlePost__titleInput:focus, .singlePost__descriptionInput:focus {
     outline: none;
 }
 
@@ -108,10 +109,6 @@
     box-shadow: var(--bs);
 }
 
-.singlePost__descriptionInput:focus {
-    outline: none;
-}
-
 .singlePost__button {
     width: 150px;
     margin-top: 35px;
@@ -122,11 +119,12 @@
     border: none;
     cursor: pointer;
     border-radius: 10px 0 10px 0;
-    align-self: center;
+    align-self: flex-end;
     text-align: center;
-    /* justify-content: center; */
+    justify-content: flex-end;
     display: flex;
     box-shadow: var(--bs);
+    font-family: var(--ff-secondary);
 }
 
 .singlePost__button:hover {

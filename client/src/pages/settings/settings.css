@@ -45,6 +45,10 @@
     box-shadow: var(--bs);
 }
 
+.settings__profilePic > img.settings__profileNoPic{
+    box-shadow: none;
+}
+
 .settings__icon {
     width: 30px;
     height: 30px;
@@ -85,10 +89,10 @@
 }
 
 .settings__submitButton {
-    align-self: center;
+    align-self: flex-end;
     width: 150px;
     border: none;
-    border-radius: 10px;
+    border-radius: 10px 0 10px 3px;
     color: var(--clr-light);
     background-color: var(--clr-accent2);
     padding: 10px;
@@ -96,7 +100,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     font-family: inherit;
     font-size: 16px;
     box-shadow: var(--bs);
